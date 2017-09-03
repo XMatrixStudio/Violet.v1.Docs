@@ -146,7 +146,7 @@ sid //站点id
 
 ### POST /api/getInfo 
 
-简介： 根据授权码获取用户信息（这在应用服务器上部署）
+简介： 根据授权码获取用户信息（这在应用服务器上部署）[在sdk上]
 
 参数：
 
@@ -176,7 +176,9 @@ webToken 网站令牌
 
 ​          sex: val.sex,
 
-​          birthTime: val.birthTime
+​          birthTime: val.birthTime,
+
+​         avatar: src,
 
  }
 
@@ -260,6 +262,22 @@ sid
 
 
 
+### POST /api/upDateAvatar
+
+简介：更改用户头像
+
+参数:
+
+avatar
+
+返回：
+
+成功{ state: 'ok ,src: '' }
+
+失败 { state: 'failed', reason: err}
+
+
+
 ### POST /api/setUserInfo
 
 简介：设置用户信息
@@ -294,41 +312,46 @@ sex(0: 男1: 女2: 未确定)
 
 成功
 
+```js
 { 
 
 state: 'ok‘
 
  userData: {
 
-​          name: val.name,
+          name: val.name,
 
-​          email: val.email,
+          email: val.email,
 
-​          web: val.web,
+          web: val.web,
 
-​          birthDate: val.birthDate,
+          birthDate: val.birthDate,
 
-​          detail: val.detail,
+          detail: val.detail,
 
-​          phone: val.phone,
+          phone: val.phone,
 
-​          sex: val.sex,
+          sex: val.sex,
 
-​          sites: val.sites,
+          sites: val.sites,
 
-​        },
+	      avatar: src,
+
+        },
 
 WebData:[{
 
-​          sid: data[index].sid,
+          sid: data[index].sid,
 
-​          name: data[index].name,
+          name: data[index].name,
 
-​          url: data[index].url,
+          url: data[index].url,
 
-​        }...]
+        }...]
 
  }
+
+```
 
 
 
